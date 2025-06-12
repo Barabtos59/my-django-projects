@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Owner Details</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .nav {
+            background-color: #444;
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            width: 100%;
+            padding: 10px 0; /* Add some padding */
+        }
+
+        .nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            display: flex; /* Use flexbox for horizontal layout */
+        }
+
+        .nav li {
+            margin: 0 15px; /* Add margin between links */
+        }
+
+        .nav a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            border: 1px solid #ddd;
+            margin-top: 20px; /* Add margin to separate from nav */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+     <div class="nav">
+        <ul>
+        <a href="{% url 'showfarmerdetails' %}">View farmer</a>
+        <a href="{% url 'showwarehouse_details' %}">View warehouse</a>
+        <a href="{% url 'showrate_chart' %}">View ratechart</a>
+        <a href="{% url 'insertrequest_for_storage' %}">Request</a>
+        <a href="#change Password">Change password</a>
+        <a href="{% url 'logcheck' %}">Logout</a>
+        </ul>
+    </div>
+    <div class="form-container">
+        <h2>Enter Rate Chart Details</h2>
+        <form>
+        <table border="2">
+            <tr>
+                <td>warehouse_id </td>
+                  <td>  rate_per_month </td>
+                <td>per_square_meter</td>
+                <td>min_space </td>
+                <td>max_space </td>
+                  <td>Delete </td>
+            </tr>
+             {% for i in userdict %}
+            <tr>
+                <td>{{ i.warehouse_id }}</td>
+                 <td>{{ i.rate_per_month }}</td>
+                 <td>{{ i.per_square_meter }}</td>
+                 <td>{{ i.min_space }}</td>
+                 <td>{{ i.max_space }}</td>
+                <td>Delete</td>
+
+            </tr>
+            {% endfor %}
+
+        </table>
+        </form>
+
+    </div>
+
+</body>
+</html>

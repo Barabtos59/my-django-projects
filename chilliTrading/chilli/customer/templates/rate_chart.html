@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Chart Entry</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            border: 1px solid #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Rate Chart Entry</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="warehouse_id">Warehouse ID</label>
+                <input type="text" id="warehouse_id" name="warehouse_id" placeholder="Enter Warehouse ID" required>
+            </div>
+            <div class="form-group">
+                <label for="rate_per_month">Rate per Month</label>
+                <input type="number" id="rate_per_month" name="rate_per_month" placeholder="Enter Rate per Month" required>
+            </div>
+            <div class="form-group">
+                <label for="per_square_meter">Rate per Square Meter</label>
+                <input type="number" id="per_square_meter" name="per_square_meter" placeholder="Enter Rate per Square Meter" required>
+            </div>
+            <div class="form-group">
+                <label for="min_space">Minimum Space</label>
+                <input type="number" id="min_space" name="min_space" placeholder="Enter Minimum Space" required>
+            </div>
+            <div class="form-group">
+                <label for="max_space">Maximum Space</label>
+                <input type="number" id="max_space" name="max_space" placeholder="Enter Maximum Space" required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div class="footer">
+            <p>Need help? <a href="#">Contact Support</a></p>
+        </div>
+    </div>
+</body>
+</html>

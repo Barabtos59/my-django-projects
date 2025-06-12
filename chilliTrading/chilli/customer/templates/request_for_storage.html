@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request for Storage</title>
+    <style>
+       /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            flex-direction: column;
+        }
+
+        .nav {
+            background-color: #444;
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            width: 100%;
+            padding: 10px 0; /* Add some padding */
+        }
+
+        .nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+            display: flex; /* Use flexbox for horizontal layout */
+        }
+
+        .nav li {
+            margin: 0 15px; /* Add margin between links */
+        }
+
+        .nav a {
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120vh;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            border: 1px solid #ddd;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+     <div class="nav">
+        <ul>
+            <a href="{% url 'showfarmerdetails' %}">view farmer</a>
+        <a href="{% url 'showwarehouse_details' %}">view warehouse</a>
+        <a href="{% url 'showrate_chart' %}">view ratechart</a>
+        <a href="{% url 'insertrequest_for_storage' %}">Request</a>
+        <a href="#change Password">change Password</a>
+        <a href="{% url 'logcheck' %}">LogOut</a>
+        </ul>
+     </div>
+    <div class="form-container">
+        <h2>Request for Storage</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="request_id">Request ID</label>
+                <input type="text" id="request_id" name="request_id" placeholder="Enter Request ID" required>
+            </div>
+            <div class="form-group">
+                <label for="farmer_id">Farmer ID</label>
+                <input type="text" id="farmer_id" name="farmer_id" placeholder="Enter Farmer ID" required>
+            </div>
+            <div class="form-group">
+                <label for="warehouse_id">Warehouse ID</label>
+                <input type="text" id="warehouse_id" name="warehouse_id" placeholder="Enter Warehouse ID" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="from_date">From Date</label>
+                <input type="date" id="from_date" name="from_date" required>
+            </div>
+            <div class="form-group">
+                <label for="to_date">To Date</label>
+                <input type="date" id="to_date" name="to_date" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                    <option value="">Select Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div class="footer">
+            <p>Need help? <a href="#">Contact Support</a></p>
+        </div>
+    </div>
+</body>
+</html>
